@@ -1,0 +1,19 @@
+.note-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .note-full-width {
+    width: 100%;
+  }
+
+  span {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    margin-top: -81px;
+    margin-left: -24px;
+    font-size: 20px;
+    padding: 10px;
+}

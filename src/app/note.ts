@@ -1,8 +1,5 @@
-export class Note{
-  title : string;
-  text :string;
-  constructor(){
-    this.title = "";
-    this.text = "";
-  }
+export class Note {
+    title: string;
+    text: String;
+
 }

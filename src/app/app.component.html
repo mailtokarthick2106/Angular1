@@ -1,15 +1,62 @@
 <!-- HeaderComponent to be displayed as part of AppComponent -->
 <app-header></app-header>
-<app-notes></app-notes>
 
 <!-- Label to display any error messages -->
 <label class="error-message">{{ errMessage }}</label>
 
 <!-- To add notes -->
+<div>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Take a note
+        </mat-panel-title>
+      </mat-expansion-panel-header>
 
+      <form class="note-form">
+        <mat-form-field class="note-full-width">
+          <input [(ngModel)]="note.title" matInput placeholder="title" name="title">
+        </mat-form-field>
 
+        <mat-form-field class="note-full-width">
+          <textarea [(ngModel)]="note.text" matInput placeholder="text" name="text"></textarea>
+        </mat-form-field>
+        <button (click)="done()" mat-button>Done</button>
+      </form>
 
-
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
 
 
 <!-- Load and display the collection of notes from server as Material Cards with card title set to note title and card content set to note text  -->
+<!--<div>
+<table class="mat-table mat-elevation-z8">
+  <thead>
+    <tr class="mat-header-row">
+
+      <th class="mat-header-cell"> title </th>
+
+      <th class="mat-header-cell"> text </th>
+
+    </tr>
+    </thead>
+  <tbody>
+    <tr class="mat-row" *ngFor="let element of notes">
+      <td class="mat-cell"> {{element.title}} </td>
+      <td class="mat-cell"> {{element.text}} </td>
+      </tr>
+  </tbody>
+</table>
+</div>-->
+
+
+<div class="main" mat-padding fxLayout="row" fxLayoutWrap="no-wrap" fxLayoutAlign="center start" fxLayoutGap="15px">
+  <mat-card class="mat-elevation-z2" mat-whiteframe="8" *ngFor="let article of notes">
+   <mat-card-title>{{ article.title }}</mat-card-title>
+    <!--<mat-card-content>
+      <p>{{ article.text }}</p>
+  </mat-card-content>-->
+  </mat-card>
+</div>
